@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'KyivTypeSerif-VarGX';
+    src: url('"D:/курсач/fonts/KyivTypeSerif-VarGX.ttf"') format('truetype');
+}
+/*шрифт маденький*/
+@font-face {
+    font-family: 'CustomFont';
+    src: url('file:///D:/курсач/fonts/20652.otf') format('opentype'); /* Используйте file:// для абсолютного пути */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'CustomFont';
+    background-color: #260541;
+    color: white; /* Установка белого цвета шрифта */
+    text-align: center; /* Выравнивание текста по центру */
+    
+}
+
+h2 {
+    color: white; /* Установка белого цвета шрифта */
+}
+
+/*сам колонтитул*/
+header {
+    text-align: center;
+    width: 100vw;
+    height: 600px;
+    position: relative;
+}
+
+/*полоска*/
+header::after {
+    content: ''; /* Обязательное свойство для псевдоэлемента */
+    position: absolute;
+    bottom: -20px; /* Значение должно быть равно или больше высоты отступа */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Высота отступа */
+    background-color: rgba(255, 255, 255, 0.5); /* Прозрачный черный цвет */
+    z-index: 1; /* Устанавливаем z-index, чтобы псевдоэлемент был под колонтитулом */
+}
+
+/*кнопка правил*/
+.club-rules-btn {
+    z-index: 7;
+    position: fixed; /* Фиксированное позиционирование */
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 26px;
+    text-decoration: none; /* Удаление подчеркивания ссылки */
+    opacity: 0.7; /* Прозрачность кнопки */
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон кнопки */
+    transition: opacity 0.3s ease; /* Плавное изменение прозрачности при наведении */
+}
+
+/*наведение на кнопку*/
+.club-rules-btn:hover {
+    opacity: 0.9; /* Увеличение прозрачности при наведении */
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-text1 {
+   
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: #260541;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+
+   
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+}
+
+.header-text2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    opacity: 0.8; /* Прозрачность текста */
+    font-family: 'CustomFont', sans-serif;
+    letter-spacing: 1px; /* Добавление небольшого отступа между буквами */
+    line-height: 1.5; /* Увеличение межстрочного расстояния */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Дополнительные стили для отзывов */
+.feedback-section {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.feedback-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-name {
+    font-weight: bold;
+    font-size: 90px;
+}
+
+.feedback-rating {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.feedback-message {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.feedback-submit-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #260541;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-submit-btn:hover {
+    background-color: #3a075e;
+}
+
+.complaints-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #260541;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.complaint-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+}
+
+.complaint-item:last-child {
+    margin-bottom: 0; /* Убираем отступ после последней жалобы */
+}
+
+.complaint-text {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.complaint-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.complaint-date {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#feedback_list {
+    margin-top: 40px; /* Отступ сверху между комментариями */
+}
+
+#feedback_list li {
+    margin-bottom: 30px; /* Отступ снизу между комментариями */
+}
+
+
+
+/* Применение стилей для кнопки */
+.open-button {
+       
+    top: 50px;
+    left: 50px;
+    padding: 20px 40px; /* Увеличиваем отступы */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Увеличиваем радиус скругления углов */
+    cursor: pointer;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 26px;
+    text-decoration: none; /* Удаление подчеркивания ссылки */
+    opacity: 0.7; /* Прозрачность кнопки */
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон кнопки */
+    transition: opacity 0.3s ease; /* Плавное изменение прозрачности при наведении */
+}
+
+.open-button:hover {
+    opacity: 0.9; /* Увеличение прозрачности при наведении */
+}
+
+
+/* Для экранов меньше 600px (типичные смартфоны) */
+@media (max-width: 600px) {
+    /* Добавьте здесь ваши стили для мобильных устройств */
+    header {
+        height: 300px; /* Измените высоту заголовка для меньших экранов */
+    }
+
+    .header-text1 {
+        font-size: 60px; /* Уменьшите размер шрифта для меньших экранов */
+        top: 20%; /* Измените позицию */
+    }
+
+    .header-text2 {
+        font-size: 24px; /* Уменьшите размер шрифта для меньших экранов */
+        top: 50%; /* Измените позицию */
+    }
+
+    .club-rules-btn {
+        font-size: 18px; /* Уменьшите размер шрифта для меньших экранов */
+    }
+
+    /* Измените другие элементы по мере необходимости */
+}

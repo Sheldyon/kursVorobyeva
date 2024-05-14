@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержка</title>
+    <link rel="stylesheet" type="text/css" href="sup.css">
+</head>
+
+<body>
+    <header>
+        <a href="club.html" class="club-rules-btn">главная страница</a>
+        <img src="D:\курсач\1710715744024.jpg" alt="Ночной клуб Petrol">
+        
+        <h1 class="header-text1">Petrol</h1>
+        <p class="header-text2">Отзывы и поддержка</p>
+    </header>
+    <main>
+        <section id="feedback">
+            <h2 id="average_rating"></h2>
+            <form id="feedback_form">
+                <label for="feedback_name" style="font-size: 30px;">Имя:</label><br>
+                <input type="text" id="feedback_name" name="feedback_name" required><br>
+                <label for="feedback_message" style="font-size: 30px;">Отзыв:</label><br>
+                <textarea id="feedback_message" name="feedback_message" rows="4" required style="width: 50%; height: 300px;"></textarea><br>
+                <label for="feedback_rating" style="font-size: 30px;">Оценка:</label><br>
+                <div class="rating">
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="Ужасно" style="font-size: 30px;">1 star</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="Плохо" style="font-size: 30px;">2 stars</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="Удовлетворительно" style="font-size: 30px;">3 stars</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="Хорошо" style="font-size: 30px;">4 stars</label>
+                    <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="Отлично" style="font-size: 30px;">5 stars</label>
+                
+
+
+               
+                </div><br>
+                
+                <button type="submit" class="open-button">Отправить отзыв</button>
+            </form>
+            <p id="feedback_list" style="font-size: 25px; color: rgb(221, 243, 179);  "><p></p></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Отзывы и Книга Жалоб и Предложений</p>
+        
+    </footer>
+
+    <script>
+        const feedbackForm = document.getElementById('feedback_form');
+        const feedbackList = document.getElementById('feedback_list');
+        const ratingContainer = document.getElementById('average_rating');
+    
+        // Загружаем сохраненные отзывы при загрузке страницы
+        window.addEventListener('load', function() {
+            loadFeedbacks();
+            displayAverageRating(JSON.parse(localStorage.getItem('feedbacks')) || []);
+        });
+    
+        // Обработка отправки формы
+        feedbackForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            saveFeedback();
+            feedbackForm.reset();
+            loadFeedbacks();
+            displayAverageRating(JSON.parse(localStorage.getItem('feedbacks')) || []);
+        });
+    
+        // Сохранение отзыва в localStorage
+        function saveFeedback() {
+            const name = document.getElementById('feedback_name').value;
+            const message = document.getElementById('feedback_message').value;
+            const rating = document.querySelector('.rating input:checked').value;
+    
+            const feedback = {
+                name: name,
+                message: message,
+                rating: rating
+            };
+    
+            let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+            feedbacks.push(feedback);
+            localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+        }
+    
+        // Загрузка отзывов из localStorage и вывод на страницу
+        function loadFeedbacks() {
+            feedbackList.innerHTML = '';
+            const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    
+            feedbacks.forEach(function(feedback) {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${feedback.name}</strong> (${feedback.rating} stars): ${feedback.message}`;
+                feedbackList.appendChild(li);
+            });
+        }
+    
+        // Вычисление среднего рейтинга
+        function calculateAverageRating(feedbacks) {
+            if (feedbacks.length === 0) {
+                return 0; // Если нет отзывов, средний рейтинг равен 0
+            }
+    
+            let totalRating = 0;
+            feedbacks.forEach(function(feedback) {
+                totalRating += parseInt(feedback.rating);
+            });
+    
+            return totalRating / feedbacks.length;
+        }
+    
+        // Вывод среднего рейтинга на страницу
+        function displayAverageRating(feedbacks) {
+            const averageRating = calculateAverageRating(feedbacks);
+            ratingContainer.textContent = `Средний рейтинг: ${averageRating.toFixed(1)}`;
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,401 @@
+@font-face {
+    font-family: 'KyivTypeSerif-VarGX';
+    src: url('"D:/курсач/fonts/KyivTypeSerif-VarGX.ttf"') format('truetype');
+}
+/*шрифт маденький*/
+    @font-face {
+        font-family: 'CustomFont';
+        src: url('file:///D:/курсач/fonts/20652.otf') format('opentype'); /* Используйте file:// для абсолютного пути */
+    }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+    background-color:#260541;
+}
+
+h2{
+    color: white;
+    font-family: 'KyivTypeSerif-VarGX';
+    text-align: center;
+}
+/*сам колонтитул*/
+/*сам колонтитул*/
+header {
+    
+    text-align: center;
+    width: 100vw;
+    height: 600px;
+    position: relative;
+}
+/*полоска*/
+header::after {
+    content: ''; /* Обязательное свойство для псевдоэлемента */
+    position: absolute;
+    bottom: -20px; /* Значение должно быть равно или больше высоты отступа */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Высота отступа */
+    background-color: rgba(255, 255, 255, 0.5); /* Прозрачный черный цвет */
+    z-index: 1; /* Устанавливаем z-index, чтобы псевдоэлемент был под колонтитулом */
+}
+
+/*кнопка правил*/
+.club-rules-btn {
+    z-index: 7;
+    position: fixed; /* Фиксированное позиционирование */
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 26px;
+    text-decoration: none; /* Удаление подчеркивания ссылки */
+    opacity: 0.7; /* Прозрачность кнопки */
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон кнопки */
+    transition: opacity 0.3s ease; /* Плавное изменение прозрачности при наведении */
+}
+/*наведение на кнопку*/
+.club-rules-btn:hover {
+    opacity: 0.9; /* Увеличение прозрачности при наведении */
+}
+
+
+header img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-text1 {
+   
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: #260541;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+
+   
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+}
+
+.header-text2 {
+   
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+    opacity: 0.8; /* Прозрачность текста */
+    font-family: 'CustomFont', sans-serif;
+    letter-spacing: 1px; /* Добавление небольшого отступа между буквами */
+    line-height: 1.5; /* Увеличение межстрочного расстояния */
+   
+ 
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.burger-menu {
+    position: relative;
+    display: inline-block;
+    
+}
+
+
+.burger-icon img {
+    width: 100vw; /* Ширина равная ширине окна просмотра */
+    height: 500px; /* Фиксированная высота кнопки */
+    object-fit: cover; /* Масштабирование изображения для заполнения размеров контейнера */
+    cursor: pointer;
+    z-index: -2;
+}
+
+.menu-text {
+    position: absolute;
+    font-family:'KyivTypeSerif-VarGX' ;
+    top: 50%; /* Располагаем текст по вертикали на середине */
+    left: 50%; /* Располагаем текст по горизонтали на середине */
+    transform: translate(-50%, -50%); /* Центрируем текст относительно его собственных размеров */
+    font-size: 60px; /* Размер шрифта */
+    text-align: center;
+    color: white; /* Цвет текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+    z-index: 1; /* Перемещаем текст над изображением */
+}
+.menu-text {
+    position: absolute;
+    font-family:'KyivTypeSerif-VarGX' ;
+    top: 50%; /* Располагаем текст по вертикали на середине */
+    left: 50%; /* Располагаем текст по горизонтали на середине */
+    transform: translate(-50%, -50%); /* Центрируем текст относительно его собственных размеров */
+    font-size: 60px; /* Размер шрифта */
+    text-align: center;
+    color: white; /* Цвет текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+    z-index: 0; /* Перемещаем текст над изображением */
+}
+.menu-text1 {
+    position: absolute;
+    font-family:'KyivTypeSerif-VarGX' ;
+    top: 50%; /* Располагаем текст по вертикали на середине */
+    left: 50%; /* Располагаем текст по горизонтали на середине */
+    transform: translate(-50%, -50%); /* Центрируем текст относительно его собственных размеров */
+    font-size: 60px; /* Размер шрифта */
+    text-align: center;
+    color: white; /* Цвет текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+    z-index: 0; /* Перемещаем текст над изображением */
+}
+
+.menu-text2 {
+    position: absolute;
+    font-family:'KyivTypeSerif-VarGX' ;
+    top: 50%; /* Располагаем текст по вертикали на середине */
+    left: 50%; /* Располагаем текст по горизонтали на середине */
+    transform: translate(-50%, -50%); /* Центрируем текст относительно его собственных размеров */
+    font-size: 60px; /* Размер шрифта */
+    text-align: center;
+    color: white; /* Цвет текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+    z-index: 0; /* Перемещаем текст над изображением */
+}
+
+.menu-text3{
+    position: absolute;
+    font-family:'KyivTypeSerif-VarGX' ;
+    top: 50%; /* Располагаем текст по вертикали на середине */
+    left: 50%; /* Располагаем текст по горизонтали на середине */
+    transform: translate(-50%, -50%); /* Центрируем текст относительно его собственных размеров */
+    font-size: 60px; /* Размер шрифта */
+    text-align: center;
+    color: white; /* Цвет текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+    z-index: 0; /* Перемещаем текст над изображением */
+}
+
+
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    font-family:'KyivTypeSerif-VarGX' ;
+    font-size: 60px; /* Размер шрифта */
+    width: 100vw;
+    background-color: #997a1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 1; /* Устанавливаем более высокий z-index */
+}
+
+.burger-menu input[type="checkbox"] {
+    display: none;
+}
+
+.burger-menu input[type="checkbox"]:checked + .menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Добавляем отступы */
+}
+
+.menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+.menu ul li label {
+    cursor: pointer;
+}
+
+.submenu {
+    display: none;
+}
+
+.burger-menu input[type="checkbox"]:checked ~ .menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.submenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.submenu ul li {
+    padding: 5px 0;
+}
+/* Стили для первого меню */
+#beer-menu {
+    z-index: 2; /* Перемещаем первое меню выше */
+}
+
+/* Стили для второго меню */
+#cocktails-menu {
+    z-index: 1; /* Перемещаем второе меню ниже */
+    background-color: #992207;
+}
+
+#shots-menu {
+    z-index: 0; /* Устанавливаем более низкий z-index */
+    background-color: rgb(60, 45, 194);
+}
+
+#bezalco-menu {
+    z-index: -1; /* Устанавливаем более низкий z-index */
+    background-color: rgb(255, 172, 241);
+}
+#food-menu{
+    z-index: -2; /* Устанавливаем более низкий z-index */
+    background-color: rgb(140, 27, 51);
+}
+
+#shots-toggle:checked ~ #shots-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2; /* Выше всех */
+}
+
+#bezalco-toggle:checked ~ #bezalco-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1; /* Выше, чем кухня, но ниже шотов */
+}
+
+#food-toggle:checked ~ #food-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 0; /* Ниже всех */
+}
+
+#beer-toggle:checked ~ #beer-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 3; /* Выше всех */
+}
+
+#cocktails-toggle:checked ~ #cocktails-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 4; /* Выше всех */
+}
+@media only screen and (max-width: 768px) {
+    header {
+        height: 200px;
+    }
+
+    .header-text1 {
+        font-size: 36px;
+    }
+
+    .header-text2 {
+        font-size: 14px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Кнопка правил */
+.club-rules-btn {
+    z-index: 7;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 26px;
+    text-decoration: none;
+    opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+.club-rules-btn:hover {
+    opacity: 0.9;
+}
+
+/* Меню */
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    font-family: 'KyivTypeSerif-VarGX';
+    font-size: 60px;
+    width: 100vw;
+    background-color: #997a1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 1;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+.menu ul li label {
+    cursor: pointer;
+}
+
+/* Бургер-иконка */
+.burger-icon img {
+    width: 100vw;
+    height: 500px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+

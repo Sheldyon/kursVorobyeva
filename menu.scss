@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'KyivTypeSerif-VarGX';
+    src: url('"D:/курсач/fonts/KyivTypeSerif-VarGX.ttf"') format('truetype');
+}
+
+/*шрифт маденький*/
+@font-face {
+    font-family: 'CustomFont';
+    src: url('file:///D:/курсач/fonts/20652.otf') format('opentype'); /* Используйте file:// для абсолютного пути */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+    background-color:#260541;
+}
+
+h2{
+    color: white;
+    font-family: 'KyivTypeSerif-VarGX';
+    text-align: center;
+}
+
+/*сам колонтитул*/
+header {
+    text-align: center;
+    width: 100vw;
+    height: 600px;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        z-index: 1;
+    }
+}
+
+/*кнопка правил*/
+.club-rules-btn {
+    z-index: 7;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 26px;
+    text-decoration: none;
+    opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-text1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: #260541;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+}
+
+.header-text2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    opacity: 0.8;
+    font-family: 'CustomFont', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.burger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.burger-icon img {
+    width: 100vw;
+    height: 500px;
+    object-fit: cover;
+    cursor: pointer;
+    z-index: -2;
+}
+
+.menu-text {
+    position: absolute;
+    font-family:'KyivTypeSerif-VarGX' ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    font-family: 'KyivTypeSerif-VarGX';
+    font-size: 60px;
+    width: 100vw;
+    background-color: #997a1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 1;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+.menu ul li label {
+    cursor: pointer;
+}
+
+.burger-menu input[type="checkbox"] {
+    display: none;
+}
+
+.burger-menu input[type="checkbox"]:checked + .menu {
+    visibility: visible;
+    opacity: 1;
+}

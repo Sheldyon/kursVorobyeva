@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клуб "Petrol"</title>
+    <link rel="stylesheet" type="text/css" href="club.css">
+</head>
+<body>
+    <header>
+        <a href="rules.html" class="club-rules-btn">Правила клуба</a>
+        <img src="D:/.курсач/1710715744024.jpg" alt="Ночной клуб Petrol">
+        
+        <h1 class="header-text1">Petrol</h1>
+        <p class="header-text2"> куда приводят мечты</p>
+    </header>
+    <div class="decorative-line"></div>
+    <div class="buttons-container">
+        <a href="afisha.html"  >Афиша</a>
+        <a href="menu.html" >Меню и цены</a>
+        <a href="order.html" >Заказать столик</a>
+        <a href="sup.html" >Отзывы и поддержка</a>
+    </div>
+    <div class="container">
+      
+        
+        <script src="code.js"></script> 
+        <h2>Адрес: Пр. Держинского д.128</h2>
+        <h2>Ежедневно 17:00-6:00</h2>
+        <div class="overlay" id="overlay"> 
+            <div class="registration-form" id="registration-form"> <!-- Окно регистрации -->
+         
+                <h2>Регистрация</h2>
+                <span class="close" id="close">&times;</span> <!-- Крестик в окне регистрации -->
+                <form>
+                  
+                    <label for="username">Имя пользователя:</label>
+                    <input type="text" id="username" name="username" required>
+        
+                    <label for="phone">Номер телефона:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="^\+?[0-9\s-]{10,15}$" title="Номер телефона должен содержать от 10 до 15 цифр">
+                    <div id="phone-error" class="error-message" style="display: none; color: red;">Номер телефона должен содержать от 10 до 15 цифр.</div>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div id="email-error" class="error-message" style="display: none; color: red;">Пожалуйста, введите действительный email адрес.</div>
+        
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+        
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+               
+            </div>
+        </div>
+        
+        <button class="open-button" id="open-button">Открыть окно регистрации</button> <!-- Кнопка открытия окна -->
+       
+    </div>
+    <footer>
+        <svg class="full-width-line" height="10">
+            <line x1="0" y1="5" x2="100%" y2="5" stroke="white" stroke-width="2" />
+        </svg>
+    </footer>
+</body>
+</html>

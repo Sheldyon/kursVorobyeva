@@ -1,0 +1,330 @@
+/*шрифт большой*/
+@font-face {
+    font-family: 'KyivTypeSerif-VarGX';
+    src: url('"D:/курсач/fonts/KyivTypeSerif-VarGX.ttf"') format('truetype');
+}
+/*шрифт маденький*/
+    @font-face {
+        font-family: 'CustomFont';
+        src: url('file:///D:/курсач/fonts/20652.otf') format('opentype'); /* Используйте file:// для абсолютного пути */
+    }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+    background-color:#260541;
+}
+/*сам колонтитул*/
+header {
+    
+    text-align: center;
+    width: 100vw;
+    height: 600px;
+    position: relative;
+}
+/*полоска*/
+header::after {
+    content: ''; /* Обязательное свойство для псевдоэлемента */
+    position: absolute;
+    bottom: -20px; /* Значение должно быть равно или больше высоты отступа */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Высота отступа */
+    background-color: rgba(255, 255, 255, 0.5); /* Прозрачный черный цвет */
+    z-index: -1; /* Устанавливаем z-index, чтобы псевдоэлемент был под колонтитулом */
+}
+/*кнопка правил*/
+.club-rules-btn {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 26px;
+    text-decoration: none; /* Удаление подчеркивания ссылки */
+    opacity: 0.7; /* Прозрачность кнопки */
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон кнопки */
+    transition: opacity 0.3s ease; /* Плавное изменение прозрачности при наведении */
+}
+/*наведение на кнопку*/
+.club-rules-btn:hover {
+    opacity: 0.9; /* Увеличение прозрачности при наведении */
+}
+
+
+
+
+header img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-text1 {
+   
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: #260541;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+}
+
+.header-text2 {
+   
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+    opacity: 0.8; /* Прозрачность текста */
+    font-family: 'CustomFont', sans-serif;
+    letter-spacing: 1px; /* Добавление небольшого отступа между буквами */
+    line-height: 1.5; /* Увеличение межстрочного расстояния */
+   
+ 
+}
+
+.header-text1,
+.header-text2 {
+    opacity: 0; /* Устанавливаем начальную непрозрачность */
+    animation: fadeIn 6s forwards; /* Применяем анимацию появления с непрозрачностью */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; } /* Начальная непрозрачность */
+    100% { opacity: 1; } /* Конечная непрозрачность */
+}
+
+/* Задержка анимации для второго текста */
+.header-text2 {
+    animation-delay: 2s; /* Задержка 0.5 секунды */
+}
+
+
+
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение кнопок по ширине */
+    padding: 20px 0; /* Внешний отступ между декоративной полоской и кнопками */
+    text-align: center; /* Выравнивание текста по центру */
+    
+}
+
+.buttons-container a{
+    display: block; /* Превратить ссылки в блочные элементы */
+    width: 100%; /* Занимать всю доступную ширину */
+    padding: 40px 50px; /* Увеличиваем отступы */
+    background-color: rgba(162, 162, 162, 0.5); /* Прозрачный черный цвет */
+    color: white;
+    font-family: 'CustomFont', sans-serif;
+    opacity: 0.8; /* Прозрачность текста */
+    font-size: 36px;
+    border: none;
+    text-decoration: none; /* Удаление подчеркивания ссылки */
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px; /* Добавляем отступы по горизонтали между кнопками */
+   
+    transition: font-size 0.3s ease; /* Плавное изменение размера шрифта */
+}
+    
+
+    .buttons-container a:hover {
+        font-size: 60px; /* Увеличиваем размер шрифта при наведении */
+        opacity: 1;
+      
+    }
+
+    
+    .open-button {
+       
+        top: 50px;
+        left: 50px;
+        padding: 20px 40px; /* Увеличиваем отступы */
+        color: white;
+        border: none;
+        border-radius: 10px; /* Увеличиваем радиус скругления углов */
+        cursor: pointer;
+        font-family: 'CustomFont', sans-serif;
+        font-size: 26px;
+        text-decoration: none; /* Удаление подчеркивания ссылки */
+        opacity: 0.7; /* Прозрачность кнопки */
+        background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон кнопки */
+        transition: opacity 0.3s ease; /* Плавное изменение прозрачности при наведении */
+    }
+    
+    .open-button:hover {
+        opacity: 0.9; /* Увеличение прозрачности при наведении */
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+   
+  /* Стили для окна регистрации */
+.registration-form {
+    
+    position: relative; /* Добавляем позиционирование relative */
+    background-color: #fff;
+    padding: 20px;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+    
+    .registration-form h2 {
+        margin-bottom: 20px;
+    }
+    
+    .registration-form form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .registration-form label {
+        margin-bottom: 10px;
+    }
+    
+    .registration-form input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .registration-form button {
+        display: flex;
+        padding: 10px 20px;
+        background-color: #007bff; /* Цвет фона кнопки */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+    }
+    
+    .registration-form button:hover {
+        background-color: #0056b3; /* Измененный цвет фона при наведении */
+    }
+
+    .registration-form input[type="tel"] {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+
+/* Стили для крестика в окне регистрации */
+.registration-form .close {
+    position: absolute; /* Изменяем на absolute */
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.registration-form .close:hover {
+    color: #000;
+}
+
+footer {
+    background-color: #260541;
+    padding: 20px;
+    text-align: center;
+}
+
+.full-width-line {
+    width: 100%;
+    height: 10px;
+}
+
+.full-width-line line {
+    stroke: white;
+    stroke-width: 2;
+}
+
+
+
+    
+/* Медиа-запрос для мобильной версии */
+@media (max-width: 768px) {
+
+    header {
+        height: auto; /* Автоматическая высота колонтитула */
+       
+    }
+
+    header::after {
+        bottom: 0; /* Полоска внизу колонтитула */
+        height: 10px; /* Уменьшаем высоту полоски */
+    }
+
+    .header-text1 {
+        top: 20%; /* Позиция текста 1 в мобильной версии */
+        font-size: 60px; /* Уменьшаем размер текста 1 */
+    }
+
+    .header-text2 {
+        top: 45%; /* Позиция текста 2 в мобильной версии */
+        font-size: 24px; /* Уменьшаем размер текста 2 */
+    }
+
+    .club-rules-btn,
+    .open-button {
+        padding: 10px 20px; /* Уменьшаем отступы кнопок */
+        font-size: 18px; /* Уменьшаем размер текста кнопок */
+    }
+
+    .buttons-container {
+        padding: 10px 0; /* Уменьшаем внешний отступ кнопок */
+    }
+
+    .buttons-container a {
+        padding: 20px; /* Уменьшаем отступы кнопок */
+        font-size: 24px; /* Уменьшаем размер текста кнопок */
+        margin: 10px 0; /* Добавляем отступы между кнопками */
+    }
+}
+
+    .buttons-container {
+        flex-direction: column; /* Кнопки вертикально выравниваются в столбец */
+        align-items: stretch; /* Кнопки занимают всю доступную ширину */
+    }
+    
+
+    .buttons-container a {
+        margin-bottom: 10px; /* Добавляем небольшой отступ между кнопками */
+    }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ столов</title>
+    <link rel="stylesheet" type="text/css" href="order.css">
+</head>
+<body>
+    <header>
+        <a href="club.html" class="club-rules-btn">главная страница</a>
+        <img src="D:\курсач\1710715744024.jpg" alt="Ночной клуб Petrol">
+        <h1 class="header-text1">Petrol</h1>
+        <p class="header-text2">ЗАКАЗ СТОЛОВ И БИЛЕТОВ</p>
+    </header>
+    <div class="container">
+        <div class="price-list">
+            <h2>СХЕМА КЛУБА</h2>
+        </div>
+        <img src="photo_2024-03-18_02-29-23.jpg" alt="Схема клуба">
+    </div>
+    <div class="container">
+        <div class="price-list">
+            <h2>СТОИМОСТЬ ПОСАДОЧНЫХ МЕСТ</h2>
+            <ul>
+                <li>Диваны - 70 BUN</li>
+                <li>Столы - 35 BUN</li>
+                <li>ВИП Диваны - 105 BUN</li>
+                <li>ВИП Столы - 80 BUN</li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h2>ФОРМА ДЛЯ ОПЛАТЫ:</h2>
+            <form id="payment-form">
+                <h3>Выберите билет или стол/диван</h3>
+                <div id="cart">
+                    <h3>Билеты</h3>
+                    <ul id="ticket-list"></ul>
+                    <h3>Столы/диван</h3>
+                    <ul id="table-list"></ul>
+                </div>
+                <div>
+                    <select id="ticket-type">
+                        <option value="VIP билет">VIP билет - 150 BUN</option>
+                        <option value="Обычный билет">Обычный билет</option>
+                    </select>
+                    <button type="button" onclick="addToCart('ticket')" style="margin-top: 10px; margin-bottom: 20px;">Добавить в корзину</button>
+                </div>
+                <div>
+                    <select id="table-type">
+                        <option value="ВИП Диван">ВИП Диван - 105 BUN</option>
+                        <option value="ВИП Стол">ВИП Стол - 80 BUN</option>
+                        <option value="Обычный Диван">Обычный Диван - 70 BUN</option>
+                        <option value="Обычный Стол">Обычный Стол - 35 BUN</option>
+                    </select>
+                    <button type="button" onclick="addToCart('table')" style="margin-top: 10px; margin-bottom: 20px;">Добавить в корзину</button>
+                </div>
+                <p id="form-error" style="color: red;"></p>
+                <label for="card-number" style="font-size: 25px;">Номер карты:</label>
+                <input type="text" id="card-number" required><br><br>
+                <label for="card-holder" style="font-size: 25px;">Имя владельца карты:</label>
+                <input type="text" id="card-holder" required><br><br>
+                <label for="expiry-date" style="font-size: 25px;">Срок действия (ММ/ГГ):</label>
+                <input type="text" id="expiry-date" required><br><br>
+                <label for="cvv" style="font-size: 25px;">CVV:</label>
+                <input type="text" id="cvv" required><br><br>
+                <button type="submit" style="font-size: 25px;">Оплатить</button>
+            </form>
+            <div id="success-message" style="display: none; color: green; font-size: 25px;"></div>
+            <h3>КОНТАКТЫ АДМИНИСТРАТОРА</h3>
+            <p>А1: 375295856667</p>
+            <p>МТС: 37533585667</p>
+        </div>
+    </div>
+    
+    <script src="order.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'KyivTypeSerif-VarGX';
+    src: url('"D:/курсач/fonts/KyivTypeSerif-VarGX.ttf"') format('truetype');
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('file:///D:/курсач/fonts/20652.otf') format('opentype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+    background-color: #260541;
+}
+
+h2 {
+    color: white;
+    font-family: 'KyivTypeSerif-VarGX';
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    width: 100vw;
+    height: 600px;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+
+.club-rules-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 26px;
+    text-decoration: none;
+    opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+.club-rules-btn:hover {
+    opacity: 0.9;
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-text1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: #260541;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+}
+
+.header-text2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+    opacity: 0.8;
+    font-family: 'CustomFont', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+
+.price-list, .contact-info {
+    margin-top: 20px;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.price-list {
+    font-family: 'CustomFont';
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: 36px;
+}
+
+.price-list h2 {
+    text-align: center;
+}
+
+.price-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.price-list ul li {
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    width: 50%;
+    float: left;
+    font-family: 'CustomFont';
+    text-align: center;
+    font-size: 36px;
+}
+
+.contact-info h2 {
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+#payment-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 18px; /* Увеличиваем размер шрифта для формы */
+}
+
+#payment-form label,
+#payment-form input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+#payment-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #260541;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container img {
+        width: 100%;
+        float: none;
+    }
+

@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'KyivTypeSerif-VarGX';
+    src: url('D:/курсач/fonts/KyivTypeSerif-VarGX.ttf') format('truetype');
+}
+
+/*шрифт маденький*/
+@font-face {
+    font-family: 'CustomFont';
+    src: url('file:///D:/курсач/fonts/20652.otf') format('opentype'); /* Используйте file:// для абсолютного пути */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+    background-color: #260541;
+}
+
+h2 {
+    color: white;
+    font-family: 'KyivTypeSerif-VarGX';
+    text-align: center;
+}
+
+/*сам колонтитул*/
+header {
+    text-align: center;
+    width: 100vw;
+    height: 600px;
+    position: relative;
+
+    &::after {
+        content: ''; /* Обязательное свойство для псевдоэлемента */
+        position: absolute;
+        bottom: -20px; /* Значение должно быть равно или больше высоты отступа */
+        left: 0;
+        width: 100%;
+        height: 20px; /* Высота отступа */
+        background-color: rgba(255, 255, 255, 0.5); /* Прозрачный черный цвет */
+        z-index: -1; /* Устанавливаем z-index, чтобы псевдоэлемент был под колонтитулом */
+    }
+}
+
+/*кнопка правил*/
+.club-rules-btn {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 26px;
+    text-decoration: none; /* Удаление подчеркивания ссылки */
+    opacity: 0.7; /* Прозрачность кнопки */
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон кнопки */
+    transition: opacity 0.3s ease; /* Плавное изменение прозрачности при наведении */
+
+    &:hover {
+        opacity: 0.9; /* Увеличение прозрачности при наведении */
+    }
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-text1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: #260541;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+    font-family: 'KyivTypeSerif-VarGX', sans-serif;
+}
+
+.header-text2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+    opacity: 0.8; /* Прозрачность текста */
+    font-family: 'CustomFont', sans-serif;
+    letter-spacing: 1px; /* Добавление небольшого отступа между буквами */
+    line-height: 1.5; /* Увеличение межстрочного расстояния */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #fff;
+
+        th, td {
+            border: 1px solid #e7d7ec;
+            padding: 10px;
+            text-align: center;
+        }
+
+        thead th {
+            background-color: #601074;
+        }
+
+        tbody td {
+            background-color: #260541;
+        }
+
+        #calendar th[colspan="7"] {
+            font-size: 24px;
+            padding: 20px 0;
+        }
+    }
+}
+
+/* Медиа-запрос для мобильной версии */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Автоматическая высота колонтитула */
+    }
+
+    header::after {
+        bottom: 0; /* Полоска внизу колонтитула */
+        height: 10px; /* Уменьшаем высоту полоски */
+    }
+
+    .header-text1 {
+        top: 20%; /* Позиция текста 1 в мобильной версии */
+        font-size: 60px; /* Уменьшаем размер текста 1 */
+    }
+
+    .header-text2 {
+        top: 45%; /* Позиция текста 2 в мобильной версии */
+        font-size: 24px; /* Уменьшаем размер текста 2 */
+    }
+
+    .club-rules-btn,
+    .open-button {
+        padding: 10px 20px; /* Уменьшаем отступы кнопок */
+        font-size: 18px; /* Уменьшаем размер текста кнопок */
+    }
+}
